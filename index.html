@@ -66,8 +66,21 @@
         <div class="container section">
           <section class="homepagewelcomemessage">
             <h1>EFEKTYWNE ROZWIĄZANIA <br />DLA WASZEGO BIZNESU</h1>
-            <button type="button" class="orderbutton">Zamów usługe</button>
+            <button type="button" class="orderbutton" data-modal-open>
+              Zamów usługe
+            </button>
           </section>
+          <div class="modal is-hidden" data-modal>
+            <div class="window">
+              <button class="closeButton" data-modal-close>
+                <svg class="iconClose" width="11px" height="11px">
+                  <use
+                    href="./images/icons.svg#icon-close-black-18dp-2-1"
+                  ></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -148,7 +161,10 @@
         <div class="container section">
           <h2 class="sectionheadline">Czym się zajmujemy</h2>
           <ul class="listofphotos">
-            <li>
+            <li class="shadowBoxPosition">
+              <div class="shadowBoxWithText">
+                <a class="overPhotoTextStylez">aplikacje&nbsp;komputerowe</a>
+              </div>
               <img
                 src="images/img-8.jpg"
                 alt="stanowisko pracy z klawiaturą, monitorem, wyświetlaczem kartką papieru, notatnikiem, okularami. Nad klawiaturą spoczywają w gotowośći dłonie "
@@ -156,7 +172,10 @@
                 height="294"
               />
             </li>
-            <li>
+            <li class="shadowBoxPosition">
+              <div class="shadowBoxWithText">
+                <a class="overPhotoTextStylez">aplikacje&nbsp;mobilne</a>
+              </div>
               <img
                 src="images/img-2-2.jpg"
                 alt="Dłoń trzyma smartfon, w tle monitory wyświetlające przykładowe upozycionowanie sekcji aplikacji na ekranie smartfonu."
@@ -164,7 +183,10 @@
                 height="294"
               />
             </li>
-            <li>
+            <li class="shadowBoxPosition">
+              <div class="shadowBoxWithText">
+                <a class="overPhotoTextStylez">rozwiązania&nbsp;graficzne</a>
+              </div>
               <img
                 src="images/img-3-2.jpg"
                 alt="Dłoń trzyma tablet wyświetlający paletę kolorów, w tle, częściowo poza kadrem monitor"
@@ -469,5 +491,8 @@
       </div>
     </footer>
     <!---/stopka-->
+    <!---modal.js-->
+    <script src="./js/modal.js"></script>
+    <!---/modal.js-->
   </body>
 </html>
