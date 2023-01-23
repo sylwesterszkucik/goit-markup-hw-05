@@ -240,6 +240,7 @@ figcaption.fig-caption {
 .focus {
   text-decoration: underline;
   text-decoration-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logoblack {
   font-family: "Raleway";
@@ -283,6 +284,7 @@ figcaption.fig-caption {
   color: #2196f3;
   text-decoration: underline;
   text-decoration-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .communication {
@@ -298,6 +300,7 @@ figcaption.fig-caption {
 .communication:hover,
 .focus {
   color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filterscontainer {
@@ -323,11 +326,13 @@ figcaption.fig-caption {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filters:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filterwszystkie {
   width: 93px;
@@ -353,6 +358,7 @@ figcaption.fig-caption {
 .focus {
   color: #ffffff;
   background-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filterlist {
   display: flex;
@@ -386,6 +392,7 @@ figcaption.fig-caption {
 .card:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 figure {
   margin: 0;
@@ -489,6 +496,7 @@ figure {
   gap: 10px;
   color: #757575;
   text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .communicationiconsvg {
   fill: #757575;
@@ -496,6 +504,7 @@ figure {
 .communicationiconsvg:hover {
   cursor: pointer;
   fill: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .communicationbox {
@@ -509,10 +518,12 @@ figure {
 
 .hovercommunications:hover {
   color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hovercommunications:hover .communicationiconsvg {
   fill: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svgBox {
   width: 270px;
@@ -550,6 +561,7 @@ figure {
   background-color: #2196f3;
   fill: white;
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customerLogoBox {
   box-sizing: border-box;
@@ -566,6 +578,7 @@ figure {
   fill: #2196f3;
   cursor: pointer;
   border: 1px solid #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customerLogoSvg {
   fill: #afb1b8;
@@ -575,6 +588,7 @@ figure {
 .customerLogoBox:focus .customerLogoSvg {
   fill: #2196f3;
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .ourCustomersList {
   margin: 0px;
@@ -606,6 +620,7 @@ figure {
   background-color: #2196f3;
   fill: white;
   cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footerStlesSocialMedia {
   width: 256px;
@@ -723,27 +738,26 @@ figure {
 /* /czym się zajmujemy features */
 
 /* niebieski wysuwacz na zdjęcie */
-
 .blueBoxWithText {
-  z-index: 1;
+  position: relative;
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 370px;
-  height: 294px;
-  left: 215px;
-  top: 262px;
+  height: auto;
   background: rgba(33, 150, 243, 0.9);
   overflow: hidden;
+  height: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .blueBoxWithText:hover .overlay {
-  transform: translateY(0);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
 }
-.imageDescription:hover {
-  position: absolute;
-  width: 301px;
-  height: 196px;
+.imageDescription {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -751,8 +765,34 @@ figure {
   line-height: 28px;
   letter-spacing: 0.03em;
   color: #ffffff;
-  background-color: rgba(33, 150, 243, 0, 9);
-  transform: translateY(100%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-
 /* /niebieski wysuwacz na zdjęcie */
+
+/* niebieski zaznaczacz na ktorej podstronie jestesmy */
+.hoverAgency::after {
+  display: block;
+  content: "";
+  width: 53px;
+  min-height: 4px;
+  background: #2196f3;
+  bottom: 0;
+  border-radius: 2px;
+  margin-top: 23px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hoverPortfolio::after {
+  display: block;
+  content: "";
+  width: 58px;
+  min-height: 4px;
+  background: #2196f3;
+  bottom: 0;
+  border-radius: 2px;
+  margin-top: 23px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* /niebieski zaznaczacz na ktorej podstronie jestesmy */
